@@ -1,5 +1,5 @@
 # printsheet
-Easily create beautiful spreadsheets with R. Printsheet aims to tansform your data into a human readable form with ease. We are currently working up a beta release, if you would like to help, let me know at chris.dangerfield@gmail.com.
+Easily create beautiful spreadsheets with R. Printsheet aims to tansform your data into a human readable form, described, styled and linked. We are currently working up a beta release, if you would like to help, let me know at chris.dangerfield@gmail.com.
 
 # Proposed features
 * One function to transform data into a spreadsheet for ease of use
