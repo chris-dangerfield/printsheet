@@ -1,8 +1,20 @@
 # printsheet
 Easily create beautiful spreadsheets with R. Printsheet aims to tansform your data into a human readable form, described, styled and linked. We are currently working up a beta release, if you would like to help, let me know at chris.dangerfield@gmail.com.
 
+## The vision
+With one function, the dataset is exported to xlsx, with columns resized, and saved with an appropriate name in the working directory:
+```R
+printsheet(mtcars)
+```
+With a formula it exports files and sheets:
+```R
+library(dplyr)
+m <- add_rownames(mtcars, "Name")
+printsheet(m, formula = Name ~ .) # Exports a file per car name, with all data on one sheet
+printsheet(m, formula = . ~ Name) # Exports one file with one sheet per car name, and an index sheet
+```
+
 ## Proposed features
-* Cool logo
 * One function to transform data into a spreadsheet for ease of use
 * The ability to specify a formula and create many sheets with many tabs from one dataset (eg files ~ sheets)
 * A mini Rmd to xlsx parser, supporting three heading styles, body style, and linking style from Rmarkdown, and also support for glue syntax
