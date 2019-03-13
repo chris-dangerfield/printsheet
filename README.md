@@ -2,6 +2,8 @@
 Easily create beautiful spreadsheets with R. Printsheet aims to tansform your data into a human readable form, described, styled and linked. We are currently working up a beta release, if you would like to help, let me know at chris.dangerfield@gmail.com.
 
 ## The vision
+Ever finished a piece of analysis and wanted to give the results to your stakeholders, but the first thing they have to do is open it and resize the columns, add a filter, or copy some data into another workbook to make it useful to them? Printsheet aims to make some assumptions in this process to automate the creation of human readable spreadsheets.
+
 With one function, the dataset is exported to xlsx, with columns resized, and saved with an appropriate name in the working directory:
 ```R
 printsheet(mtcars)
@@ -13,6 +15,26 @@ m <- add_rownames(mtcars, "Name")
 printsheet(m, formula = Name ~ .) # Exports a file per car name, with all data on one sheet
 printsheet(m, formula = . ~ Name) # Exports one file with one sheet per car name, and an index sheet
 ```
+
+A description is added to the index sheet with a basic R markdown file:
+```R
+printsheet(m, formula = . ~ Name, description = "desc.Rmd")
+```
+
+And the title of the file can be changed to something meaningful:
+```R
+printsheet(m, formula = . ~ Name, description = "desc.Rmd", title = "Motor Trend Car Road Tests")
+```
+
+If a two column definitions data frame is provided, a link will be created to a "definitions" sheet from the colunn headings:
+```R
+printsheet(m, formula = . ~ Name, description = "desc.Rmd", title = "Motor Trend Car Road Tests", definitions = mtcars_defs)
+```
+Styles and logos can be added through a JSON style sheet, and either a link to a file or a weblink (the logo will be resized by the program):
+```R
+printsheet(m, formula = . ~ Name, description = "desc.Rmd", title = "Motor Trend Car Road Tests", definitions = mtcars_defs, logo = "https://web-link-to-logo.png", styles = "path-to-local-style-sheet.json")
+```
+
 
 ## Proposed features
 * One function to transform data into a spreadsheet for ease of use
