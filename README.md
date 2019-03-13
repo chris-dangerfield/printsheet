@@ -50,7 +50,7 @@ Colours are interpolated from a character vector and used to colour tabs in the 
 printsheet(m, formula = Name ~ ., colours = c("#eeeeee", "#999999"))
 ```
 
-The [viridis colour palette](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html]) will be used by default with others in that series such as "inferno" being able to be specified by name in the colours parameter:
+The [viridis colour palette](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) will be used by default with others in that series such as "inferno" being able to be specified by name in the colours parameter:
 ```R
 printsheet(m, formula = Name ~ ., colours = "inferno")
 ```
