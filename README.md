@@ -28,11 +28,31 @@ printsheet(m, formula = . ~ Name, description = "desc.Rmd", title = "Motor Trend
 
 If a two column definitions data frame is provided, a link will be created to a "definitions" sheet from the colunn headings:
 ```R
-printsheet(m, formula = . ~ Name, description = "desc.Rmd", title = "Motor Trend Car Road Tests", definitions = mtcars_defs)
+printsheet(m, formula = . ~ Name, definitions = mtcars_defs)
 ```
-Styles and logos can be added through a JSON style sheet, and either a link to a file or a weblink (the logo will be resized by the program):
+Styles and logos can be added through a JSON style sheet:
 ```R
-printsheet(m, formula = . ~ Name, description = "desc.Rmd", title = "Motor Trend Car Road Tests", definitions = mtcars_defs, logo = "https://web-link-to-logo.png", styles = "path-to-local-style-sheet.json")
+printsheet(m, formula = . ~ Name, styles = "path-to-local-style-sheet.json")
+```
+
+Logos can be added as either a link to a file or a weblink (the logo will be resized by the program):
+```R
+printsheet(m, formula = . ~ Name, logo = "https://web-link-to-logo.png")
+```
+
+A simple zip command creates the files in a single zip directory:
+```R
+printsheet(m, formula = Name ~ ., zip = TRUE)
+```
+
+Colours are interpolated from a character vector and used to colour tabs in the workbook and provide some colour on the title sheet:
+```R
+printsheet(m, formula = Name ~ ., colours = c("#eeeeee", "#999999"))
+```
+
+The [https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html](viridis colour palette) will be used by default with others in that series such as "inferno" being able to be specified by name in the colours parameter:
+```R
+printsheet(m, formula = Name ~ ., colours = "inferno")
 ```
 
 
