@@ -1,0 +1,9 @@
+Package: printsheet
+Title: Easily create beautiful spreadsheets with R
+Version: 0.1
+Authors@R: person("Chris", "Dangerfield", email = "chris.dangerfield@gmail.com",
+                  role = c("aut", "cre"))
+Description: Easily create beautiful spreadsheets with R
+Depends: R (>= 3.1.0)
+License: GNU Public Lisence
+LazyData: true
