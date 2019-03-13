@@ -30,14 +30,19 @@ If a two column definitions data frame is provided, a link will be created to a 
 ```R
 printsheet(m, formula = . ~ Name, definitions = mtcars_defs)
 ```
-Styles and logos can be added through a JSON style sheet:
+Styles can be added through a JSON style sheet:
 ```R
 printsheet(m, formula = . ~ Name, styles = "path-to-local-style-sheet.json")
 ```
 
-Logos can be added as either a link to a file or a weblink (the logo will be resized by the program):
+Logos can be added as either a link to a file or a weblink (the logo will be resized automatically):
 ```R
 printsheet(m, formula = . ~ Name, logo = "https://web-link-to-logo.png")
+```
+
+Fine tuning settings can also be created through JSON style sheet, so that corporate colour schemes, and style can be used from a single location:
+```R
+printsheet(m, formula = . ~ Name, settings = "path-to-local-settings-sheet.json")
 ```
 
 A simple zip command creates the files in a single zip directory:
