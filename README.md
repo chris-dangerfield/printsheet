@@ -6,6 +6,7 @@ Ever finished a piece of analysis and wanted to give the results to your stakeho
 
 With one function, the dataset is exported to xlsx, with columns resized, and saved with an appropriate name in the working directory:
 
+
 ```R
 printsheet(mtcars)
 ```
